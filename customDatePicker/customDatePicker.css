@@ -1,0 +1,214 @@
+.THIS {
+} 
+ 
+.THIS .root--nav--next svg,
+.THIS .root--nav--prew svg{
+	width: .6em !important;
+    height: .6em !important; 
+}
+
+.THIS .iconInput svg {
+    width: 1rem;
+    cursor:pointer;
+    pointer-events : visible;
+    position : absolute;
+    fill: rgb(112, 110, 107);
+    /*top : 50%;*/
+}
+
+.THIS .mainPicker{
+	position : relative;    
+}
+
+.THIS .ease {
+    display: none !important;    
+}
+
+.THIS hr{
+    margin : auto;
+    padding : 5px;
+    width : 80%;
+}
+
+.THIS .mydatepicker{
+    display: block;
+    position: absolute;
+    /* left : 1%; */
+    /* top : 10%; */
+    width : 280px;
+    padding : 0;
+    background-color:white;
+    z-index: 999;    
+    overflow:hidden;
+/*  border : none; */  
+ 	border-style: solid;
+    border-width: 1px;
+    border-color: #d9d9d9;   
+}
+
+.THIS .mydatepicker:after{
+    width : 0px;
+    height: 0px;
+    position: absolute;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #4cbeff transparent;
+}
+
+.THIS .mydatepicker--nav{
+    height:40px;
+    font-weight: 400;
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: .25rem;
+    overflow:hidden;
+    z-index: 8;
+}
+
+.THIS .mydatepicker--nav--color-none{
+    border: none;
+}
+
+.THIS .root--nav--select,
+.THIS .root--nav--prew,
+.THIS .root--nav--next{
+    color: inherit !important;
+    /*text-transform: uppercase;*/
+    /* padding: 0 25px; */
+}
+
+.THIS .root--nav--select:hover,
+.THIS .root--nav--prew :hover,
+.THIS .root--nav--next :hover{
+   /* -webkit-filter: invert(100%); */
+   /* filter: invert(100%); */
+    color: grey !important;
+}
+    
+.THIS .root--nav--prew,
+.THIS .root--nav--next{
+    z-index: 999;
+    position: absolute;
+}
+
+.THIS .root--nav--prew {
+    left: 10px;
+}
+
+.THIS .root--nav--next {
+    right: 10px;
+}
+
+.THIS .mydatepicker--nav--day{
+    padding: 2px 0 2px 0;
+}
+
+.THIS .mydatepicker--content{
+    display: block;
+    padding : 0 0 10px;
+    /*padding : 0 5px 0;*/ 
+    opacity: 0;
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    /*overflow:hidden;*/
+}
+
+.THIS .mydatepicker--content--anime{  
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    transition: .2s linear;
+}
+
+.THIS .datepicker--day,
+.THIS .datepicker--month,
+.THIS .datepicker--year {
+    float: left;
+    font-size: 1.1em;
+    padding:4px;
+    font-weight: 500;
+}
+/*
+.THIS .datepicker--day{
+    font-size: 1.2em;
+}
+*/
+.THIS .dynamicYear {
+    padding : 0;
+    border: none;
+}
+
+.THIS .dynamicMonth {
+    border: none;
+}
+
+.THIS .dynamicDay:hover,
+.THIS .dynamicMonth:hover,
+.THIS .dynamicYear:hover{
+    font-weight: bold;
+    /*font-size: 1.1em;*/
+    /* background-color: rgb(194, 57, 52, 0.75); */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    cursor: pointer;    
+}
+
+.THIS .datepicker--date--nav{
+    /*font-size: 1.4em;*/
+    /*font-weight: bold;*/ 
+    float: left;
+}
+
+.THIS .dynamicDay--current,
+.THIS .dynamicMonth--current,
+.THIS .dynamicYear--current {
+    font-weight: bold;
+    background-color: rgba(30, 160, 124, 0.14); /*rgba(167, 188, 234, 0.1);*/
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.THIS .dynamicDay--current,
+.THIS .dynamicDay--today{
+    border-radius: 15px;
+}
+
+.THIS .dynamicDay--today {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);    
+   /* background-color: rgba(194, 57, 52, 0.5);*/
+}
+
+.THIS .dynamicDay--other{
+    color: #cccccc;
+}
+
+.THIS .headerInfoPickerClass{
+	padding : 10px;  
+   /* box-shadow: 0 0 30px rgba(0,0,0,0.5);*/
+    position: relative;
+}
+.THIS .menuDayClass{
+   /* color : #c23934;*/
+    font-weight: 500;
+    padding: 5px 5px 5px;
+    color : black;
+}
+
+.THIS .menuDayItemClass{
+    padding: 5px;
+}
+
+.THIS .menuDayItemClass:hover{
+    font-weight: bold;
+    border-style: solid;
+    border-width: .1px;
+   /* font-size: 1.1em;
+     background-color: rgb(194, 57, 52, 0.75); */
+    /*border-radius: 5px;*/
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
+    cursor: pointer;    
+}
+
+.THIS.toggle {
+    display: none;
+}

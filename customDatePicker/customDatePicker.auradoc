@@ -1,0 +1,36 @@
+<aura:documentation>
+	<aura:description>
+    	<h1>This Lightning custom datepicker for Salesforce </h1><code>c:customDatePicker</code>
+		<h3>This datepicker is a customisable of the datepicker that fit all your projects.</h3>
+        <p>See below to discover all customisable components.</p>
+        
+        <h3>API</h3>
+        <h5>currentDate</h5>        
+        <p>The current date</p>
+        <p>for example currentDate="2015-01-18"</p>
+        
+         <h5>Format</h5>
+         <p>date format displayed in datePicker</p>
+         <p>default value "MMM dd, YYYY"</p>
+         <p>for example format="MMM dd, YYYY"</p>
+         
+         <h5>Label</h5>
+         <p>set laber for datepicker</p>
+        
+        <h5>Header</h5>
+         <p>It allows or denies display of a header with a full description of the date.</p>
+         <p>default header="true"</p>
+        
+        <h5>Color</h5>
+         <p>This attribute set the color styles as the background and color</p>
+         <p>default bgcolor="rgb(194, 57, 52)" color="white"</p>
+        
+        <h5>Format day</h5>
+         <p>This attribute identifies the beginning of the week.</p>
+         <p>Euro - starts from Monday, USA - starts from Sunday</p>
+         <p>default formatDay="USA"</p>     
+    </aura:description>	
+<!--    <aura:example name="ExampleName" ref="c:customdatePicker" label="Using the c:customdatePicker Component" extends="force:slds">           
+        <p>This component uses Javascript without third-party frameworks and libraries but it using SLDS. <code>c:customdatePicker</code>.</p>
+	</aura:example> -->
+</aura:documentation>
