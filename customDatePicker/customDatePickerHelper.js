@@ -6,7 +6,9 @@
             var formatDay = component.get("v.formatDay");
             component.set("v.dates", []);
             var startDay = 0;
-            if(formatDay == 'Euro' ) {startDay = 1;}
+            if(formatDay == 'Euro' ) {
+                startDay = 1;
+            } else {startDay = 0;}
         
             if(date.getDay() != startDay) {
                 while (date.getDay() != startDay) {  
@@ -35,25 +37,7 @@
         component.set("v.dates", days);
 		this.createDays(component, event, days, month, d);
     },
-    
-    createDiv : function(component, event, element) {
-    	$A.createComponent(
-            "aura:html",
-            { tag: "div",
-              body : element.toString(),
-             HTMLAttributes:{"id": "Temp","class": "datepicker--date slds-size_1-of-7"}
-            },
-            function(newCmp, status, errorMessage){
-                var container = component.find('root');
-                if (component.isValid() && container.isValid() && status === 'SUCCESS') {
-                    var body = container.get("v.body");
-                    body.push(newCmp);
-                    container.set("v.body", body);
-                }
-            }
-        );
-    },
-    
+ 
     createDays : function(component, event, days, month, currentDateTemp) {
         	var currentDateCmp = component.get("v.currentDate");
         	var currentDate = new Date(currentDateCmp);
@@ -111,6 +95,7 @@
             }]);
     		if(element.getDate() == today.getDate() && element.getMonth() == today.getMonth() && element.getFullYear() == today.getFullYear()) {
                 var bgcolor = component.get("v.bgcolor");
+                var color = component.get("v.color");
                 newComponents.push(["aura:html", {
                             "tag": "div",
                             "body": element.getDate().toString(),   
@@ -120,7 +105,7 @@
                                 "data-currentdate" : element.toISOString(),
                                 "onclick": component.getReference("c.setCurrentDate"),
                                 "title": weekFullDay[element.getDay()],//element.getDate().toString(),
-                                "style": "background-color:"+bgcolor.toString()+";\n-webkit-filter: invert(1); \nfilter: invert(1);",
+                                "style": "background-color:"+bgcolor.toString()+";\ncolor:"+color.toString()+";",
                                 "class": "dynamicDay slds-text-align_center dynamicDay--today"
                               }
                 }]);                
