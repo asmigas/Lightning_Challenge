@@ -38,28 +38,28 @@
 
 ## Demos & Examples:
 
-![0](/uploads/fcb6c59d6d2b09aa51d36f476dcc1b06/0.png)
+![0](https://user-images.githubusercontent.com/7148763/50470329-1c523b00-09c1-11e9-98cd-2abcb6d28888.png)
 ```
 <c:customDatePicker aura:id="CDP01" currentDate="2015-01-18" format="MMM dd, YYYY" header="true" label="Custom DatePicker"/>
 ```
-![1](/uploads/7ff1cfbbdaa26e0d6e5fb65773242e77/1.png)
-![1.1](/uploads/9fa9e0435292deb4ba6f019b75725a9c/1.1.png)
-![1.2](/uploads/1b5bcde22e671573947484dcef0e3335/1.2.png)
+![1](https://user-images.githubusercontent.com/7148763/50470332-1cead180-09c1-11e9-93e0-566f6f421e0d.png)
+![1 1](https://user-images.githubusercontent.com/7148763/50470330-1c523b00-09c1-11e9-9f3f-b96cf0b2b82f.png)
+![1 2](https://user-images.githubusercontent.com/7148763/50470331-1cead180-09c1-11e9-9173-93943a4692ff.png)
 ```
 <c:customDatePicker aura:id="CDP02" bgcolor="yellow" color="green" header="true"/>
 ```
-![2](/uploads/66a3a0368a716bad22d7a4ee5e72c2f7/2.png)
+![2](https://user-images.githubusercontent.com/7148763/50470333-1cead180-09c1-11e9-87c8-27d0ef2e84d0.png)
 ```
 <c:customDatePicker bgcolor="#2c97a7" currentDate="2018-11-25"  header="true" formatDay="Euro"/>
 ```
-![3.2](/uploads/f3f21fdecb16b980b5daed8f0b70c620/3.2.png)
+![3 2](https://user-images.githubusercontent.com/7148763/50470334-1cead180-09c1-11e9-92db-127bb8d86290.png)
 ```
 <c:customDatePicker aura:id="CDP04" animation="true" bgcolor="#16171529" currentDate="2018-12-18" color="#CC2EFA" header="true" formatDay="Euro"/>
 ```
-![4](/uploads/a91dbc3307de1084df5d2d4a35b628de/4.png)
+![4](https://user-images.githubusercontent.com/7148763/50470335-1d836800-09c1-11e9-97a6-4edbebba3d80.png)
 ```
 <c:customDatePicker aura:id="CDP05" formatDay="Euro" bgcolor="black" color="yellow" format="YYYY/MM, DD" header="false" />
 ```
-![5](/uploads/258059b653ac9c82549f4d03b786ae59/5.png)
-![5.1](/uploads/e7a63de65c87aa809333d61ad992852d/5.1.png)
-![5.2](/uploads/fb51891be8ca5fb0ea6956f4deccb1ad/5.2.png)
+![5](https://user-images.githubusercontent.com/7148763/50470340-1d836800-09c1-11e9-8603-bd6f84d74317.png)
+![5 1](https://user-images.githubusercontent.com/7148763/50470336-1d836800-09c1-11e9-9c0a-5d4ee14e0480.png)
+![5 2](https://user-images.githubusercontent.com/7148763/50470339-1d836800-09c1-11e9-8644-418515888ad5.png)
