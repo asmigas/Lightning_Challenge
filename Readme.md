@@ -66,7 +66,7 @@
 ```
 <c:customDatePicker bgcolor="#2c97a7" currentDate="2018-11-25"  header="true" formatDay="Euro"/>
 ```
-![m4](/uploads/4c343e4c5a78fbf123d1e88ef7ed275f/m4.png)
+![m4](https://user-images.githubusercontent.com/7148763/50774671-16076d00-12a5-11e9-927e-f08379bb1f26.png)
 
 ####  PC version:
 ```
@@ -78,11 +78,11 @@
 ```
 <c:customDatePicker currentDate="2019-01-19" format="MMM dd, YYYY"  enablePicker="false" label="False enable DatePicker"/>
 ```
-![p22](/uploads/85a3f1afc5081fed4e0f120fc8715562/p22.png)
+![p22](https://user-images.githubusercontent.com/7148763/50774692-228bc580-12a5-11e9-9b8c-08b44d5967eb.png)
 ```
 <c:customDatePicker bgcolor="yellow" color="green" header="true" enablePicker="true"/>
 ```
-![p33](/uploads/8b5c0aa4fd6a3acbe3b069b2c33f42c7/p33.png)
+![p33](https://user-images.githubusercontent.com/7148763/50774706-2ae40080-12a5-11e9-9db2-4f0180d3ca80.png)
 ```
 <c:customDatePicker aura:id="CDP04" animation="true" bgcolor="#16171529" currentDate="2019-01-05" color="#CC2EFA" header="true" formatDay="Euro"/>
 ```
@@ -90,9 +90,9 @@
 ```
 <c:customDatePicker formatDay="Euro" bgcolor="black" color="yellow" format="YYYY/MM, DD" header="false" />
 ```
-![p55](/uploads/4cbd4923e82852efc18041d146aba187/p55.png)
-![p56](/uploads/616c787da3ac32bbae883d9ef9c50445/p56.png)
-![p57](/uploads/60da6a6b3f46b3949565c95e6eb80fd5/p57.png)
+![p55](https://user-images.githubusercontent.com/7148763/50774718-36cfc280-12a5-11e9-83f4-4edb80ceffb8.png)
+![p56](https://user-images.githubusercontent.com/7148763/50774719-37685900-12a5-11e9-94d1-91d0b0706afc.png)
+![p57](https://user-images.githubusercontent.com/7148763/50774720-37685900-12a5-11e9-9385-c2f5db8d80cf.png)
 ```
 <c:customDatePicker bgcolor="#2c97a7" currentDate="2019-01-01"  header="true" formatDay="Euro"/>
 ```
