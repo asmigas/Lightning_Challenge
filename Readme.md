@@ -63,9 +63,6 @@
 <c:customDatePicker bgcolor="#2c97a7" currentDate="2019-01-01"  header="true" formatDay="Euro"/>
 ```
 ![m12](https://user-images.githubusercontent.com/7148763/50774422-6c27e080-12a4-11e9-995b-cf62cdc6e6fd.png)
-```
-<c:customDatePicker bgcolor="#2c97a7" currentDate="2018-11-25"  header="true" formatDay="Euro"/>
-```
 ![m4](https://user-images.githubusercontent.com/7148763/50774671-16076d00-12a5-11e9-927e-f08379bb1f26.png)
 
 ####  PC version:
