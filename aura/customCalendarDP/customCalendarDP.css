@@ -20,10 +20,6 @@
 	position : relative;    
 }
 
-.THIS .ease {
-    display: none !important;    
-}
-
 .THIS hr{
     margin : auto;
     padding : 5px;
@@ -32,18 +28,20 @@
 
 .THIS .mydatepicker{
     display: block;
-    position: absolute;
+   /* position: absolute;*/
     /* left : 1%; */
     /* top : 10%; */
-    width : 280px;
+    width : inherit;
     padding : 0;
     background-color:white;
     z-index: 999;    
     overflow:hidden;
-/*  border : none; */  
- 	border-style: solid;
+    min-width: 270px;
+    border : none;   
+/* 	border-style: solid;
     border-width: 1px;
     border-color: #d9d9d9;   
+*/
 }
 
 .THIS .mydatepicker:after{
@@ -56,12 +54,14 @@
 }
 
 .THIS .mydatepicker--nav{
+    position:relative;
     height:40px;
     font-weight: 400;
     border: 1px solid rgb(221, 219, 218);
-    border-radius: .25rem;
+   /* border-radius: .25rem; */
     overflow:hidden;
     z-index: 8;
+    border: none;/*may-be*/
 }
 
 .THIS .mydatepicker--nav--color-none{
@@ -72,6 +72,7 @@
 .THIS .root--nav--prew,
 .THIS .root--nav--next{
     color: inherit !important;
+    box-shadow: none !important;
     /*text-transform: uppercase;*/
     /* padding: 0 25px; */
 }
@@ -81,9 +82,9 @@
 .THIS .root--nav--next :hover{
    /* -webkit-filter: invert(100%); */
    /* filter: invert(100%); */
-    color: grey !important;
+    color: grey !important;    
 }
-    
+  
 .THIS .root--nav--prew,
 .THIS .root--nav--next{
     z-index: 999;
@@ -106,18 +107,71 @@
     display: block;
     padding : 0 0 10px;
     /*padding : 0 5px 0;*/ 
-    opacity: 0;
-    transform: scale(1.5);
-    -webkit-transform: scale(1.5);
     /*overflow:hidden;*/
 }
 
-.THIS .mydatepicker--content--anime{  
-    opacity: 1;
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    transition: .2s linear;
+.THIS .mydatepicker--content--anime--reverce{  
+   -webkit-animation: flickerAnimation .2s linear alternate-reverse ;
+   -moz-animation: flickerAnimation .2s linear alternate-reverse ;
+   -o-animation: flickerAnimation .2s linear alternate-reverse ;
+    animation: flickerAnimation .2s linear alternate-reverse ;
 }
+
+.THIS .mydatepicker--content--anime{  
+   -webkit-animation: flickerAnimation .2s linear alternate;
+   -moz-animation: flickerAnimation .2s linear alternate;
+   -o-animation: flickerAnimation .2s linear alternate;
+    animation: flickerAnimation .2s linear alternate;
+}
+
+.THIS .mydatepicker--content--anime--left {
+   -webkit-animation: slideAnimation .2s linear normal;
+   -moz-animation: slideAnimation .2s linear normal;
+   -o-animation: slideAnimation .2s linear normal;
+    animation: slideAnimation .2s linear normal;    
+}
+
+.THIS .mydatepicker--content--anime--right{  
+   -webkit-animation: slideAnimation .2s linear alternate-reverse ;
+   -moz-animation: slideAnimation .2s linear alternate-reverse ;
+   -o-animation: slideAnimation .2s linear alternate-reverse ;
+    animation: slideAnimation .2s linear alternate-reverse ;
+}
+
+@keyframes flickerAnimation {
+  0%   { opacity:0; transform: scale(1.5);   -webkit-transform: scale(1.5);}
+  100% { opacity:1; transform: scale(1);   -webkit-transform: scale(1);}
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity:0; transform: scale(1.5);   -webkit-transform: scale(1.5);}
+  100% { opacity:1; transform: scale(1);   -webkit-transform: scale(1);}
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:0; transform: scale(1.5);   -webkit-transform: scale(1.5);}
+  100% { opacity:1; transform: scale(1);   -webkit-transform: scale(1);}
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:0; transform: scale(1.5);   -webkit-transform: scale(1.5);}
+  100% { opacity:1; transform: scale(1);   -webkit-transform: scale(1);}
+}
+
+@keyframes slideAnimation {
+  0%   { opacity:1; transform: translateX(0px);   -webkit-transform: translateX(0px);}
+  100% { opacity:0; transform: translateX(100%);   -webkit-transform: translateX(100%);}
+}
+@-o-keyframes slideAnimation{
+  0%   { opacity:1; transform: translateX(0px);   -webkit-transform: translateX(0px);}
+  100% { opacity:0; transform: translateX(100%);   -webkit-transform: translateX(100%);}
+}
+@-moz-keyframes slideAnimation{
+  0%   { opacity:1; transform: translateX(0px);   -webkit-transform: translateX(0px);}
+  100% { opacity:0; transform: translateX(100%);   -webkit-transform: translateX(100%);}
+}
+@-webkit-keyframes slideAnimation{
+  0%   { opacity:1; transform: translateX(0px);   -webkit-transform: translateX(0px);}
+  100% { opacity:0; transform: translateX(100%);   -webkit-transform: translateX(100%);}
+}
+
 
 .THIS .datepicker--day,
 .THIS .datepicker--month,
@@ -189,9 +243,10 @@
 }
 .THIS .menuDayClass{
    /* color : #c23934;*/
+    position: relative;
     font-weight: 500;
-    padding: 5px 5px 5px;
     color : black;
+    padding: 15px 5px 5px;
 }
 
 .THIS .menuDayItemClass{
@@ -211,4 +266,8 @@
 
 .THIS.toggle {
     display: none;
+}
+
+.THIS .datepicker-mobile_modal {
+    padding : 0;
 }

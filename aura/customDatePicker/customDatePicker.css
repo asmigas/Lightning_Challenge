@@ -1,0 +1,51 @@
+.THIS {
+} 
+
+.THIS .iconInput svg {
+    width: 1rem;
+    cursor:pointer;
+    pointer-events : visible;
+    position : absolute;
+    fill: rgb(112, 110, 107);
+    /*top : 50%;*/
+}
+
+.THIS .mainPicker{
+	position : relative;    
+}
+
+.THIS .content--dp--PC{
+    position : absolute;
+    width : 280px;
+    z-index: 9999;
+ /*  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #d9d9d9;     
+    border-radius: 5px;
+*/
+}
+
+.THIS .ease {
+    display: none !important;    
+}
+
+.THIS .animation--class .mydatepicker {
+  height : auto;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: .1s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: .1s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  from {height : 0;}
+  to {height : 450px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  from {height : 0;}
+  to {height : 450px;}
+}

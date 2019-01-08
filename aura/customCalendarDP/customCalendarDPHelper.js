@@ -1,11 +1,11 @@
 ({  
         createDateCurrent : function getDaysInMonth(component, event, d)  {
-        	var date = new Date(d.getFullYear(), d.getMonth(), 1);
-            var month = date.getMonth();
-        	var days = [];
-            var formatDay = component.get("v.formatDay");
+        	let date = new Date(d.getFullYear(), d.getMonth(), 1);
+            let month = date.getMonth();
+        	let days = [];
+            let formatDay = component.get("v.formatDay");
             component.set("v.dates", []);
-            var startDay = 0;
+            let startDay = 0;
             if(formatDay == 'Euro' ) {
                 startDay = 1;
             } else {startDay = 0;}
@@ -39,23 +39,23 @@
     },
  
     createDays : function(component, event, days, month, currentDateTemp) {
-        	var currentDateCmp = component.get("v.currentDate");
-        	var currentDate = new Date(currentDateCmp);
-        	var today = new Date();
-            //var weekDay = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-            var weekDay = ['Su','Mo','Tu','We','Th','Fr','Sa'];
-        	var weekFullDay = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-            //var cont = component.find('root--nav--day');
+        	let currentDateCmp = component.get("v.currentDate");
+        	let currentDate = new Date(currentDateCmp);
+        	let today = new Date();
+            //let weekDay = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+            let weekDay = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+        	let weekFullDay = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+            //let cont = component.find('root--nav--day');
         	//cont.set("v.body", []);
-        	var newComponentsDay = [];
-        	var formatDay = component.get("v.formatDay");
+        	let newComponentsDay = [];
+        	let formatDay = component.get("v.formatDay");
         	if(formatDay == 'Euro' ) {
                 weekDay.splice(0, 1);
                 weekDay.push('Su');
                 //weekFullDay.splice(0, 1);
                 //weekFullDay.push('Sunday');
             }
-            for (var i = 0, I = weekDay.length; i < I; i++){
+            for (let i = 0, I = weekDay.length; i < I; i++){
                 newComponentsDay.push(["aura:html", {
                         "tag": "div",
                     	"body" : weekDay[i],
@@ -72,11 +72,11 @@
             	$A.createComponents(newComponentsDay,
                     function (components, status, errorMessage) {
                         component.set("v.contentPicker", []);
-                		var pageBody = component.get("v.contentPicker");
-                        //var container = component.find('root--nav--day');
+                		let pageBody = component.get("v.contentPicker");
+                        //let container = component.find('root--nav--day');
                         if (status === 'SUCCESS') {
-                            for (var i = 0; i < components.length; i++) {
-                                var div = components[i];
+                            for (let i = 0; i < components.length; i++) {
+                                let div = components[i];
                                 pageBody.push(div);
                         	}
                         	component.set("v.contentPicker", pageBody);
@@ -84,7 +84,7 @@
                     }
                 );
         
-        var newComponents = [];
+        let newComponents = [];
         days.forEach(function(element, index) {	
              newComponents.push(["aura:html", {
                         "tag": "div",
@@ -94,8 +94,8 @@
                         }
             }]);
     		if(element.getDate() == today.getDate() && element.getMonth() == today.getMonth() && element.getFullYear() == today.getFullYear()) {
-                var bgcolor = component.get("v.bgcolor");
-                var color = component.get("v.color");
+                let bgcolor = component.get("v.bgcolor");
+                let color = component.get("v.color");
                 newComponents.push(["aura:html", {
                             "tag": "div",
                             "body": element.getDate().toString(),   
@@ -154,26 +154,26 @@
                 }]);
             }
     	});
-    	//console.log(newComponents);
+    	//console.log(newComponents);//console.log(JSON.stringify(newComponents));
         $A.createComponents(newComponents,
         function (components, status, errorMessage) {
              if (status === 'SUCCESS') {
-                var pageBody = component.get("v.contentPicker");                 
-                for (var i = 0; i < components.length; i += 2) {
-                    var td = components[i];
-                    var div = components[i + 1];
-                    var tdBody = td.get("v.body");
+                let pageBody = component.get("v.contentPicker");                 
+                for (let i = 0; i < components.length; i += 2) {
+                    let td = components[i];
+                    let div = components[i + 1];
+                    let tdBody = td.get("v.body");
                     tdBody.push(div);
                     td.set("v.body", tdBody);
                     pageBody.push(td);
                 }
-                var menuDay = component.find('menuDay'); 
+                let menuDay = component.find('menuDay'); 
                 pageBody.push(menuDay);
                 component.set("v.contentPicker", pageBody);
             }
             else // Report any error
             {
-                var toastEvent = $A.get("e.force:showToast");
+                let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
                     "title": "Error!",
                     "message": "Failed to create list components."
@@ -185,15 +185,15 @@
    },
     
     createMonth : function(component, event, tempDate) {
-        var currentDateCmp = component.get("v.currentDate");
-        var currentDate = new Date(currentDateCmp);       
-        var month = tempDate.getMonth();
+        let currentDateCmp = component.get("v.currentDate");
+        let currentDate = new Date(currentDateCmp);       
+        let month = tempDate.getMonth();
         
-        var monthYear = ['Jan.','Feb.','Mar.','Apr.','May','Jun.','Jul.','Aug.','Sept.','Oct.','Nov.','Dec.'];
-		var monthFullYear = ['January','February','March','April','May','June','July','August','September','October','November','December'];        
-        var newMonthComponents = [];
+        let monthYear = ['Jan.','Feb.','Mar.','Apr.','May','Jun.','Jul.','Aug.','Sept.','Oct.','Nov.','Dec.'];
+		let monthFullYear = ['January','February','March','April','May','June','July','August','September','October','November','December'];        
+        let newMonthComponents = [];
         
-            for (var i = 0, I = monthYear.length; i < I; i++){                
+            for (let i = 0, I = monthYear.length; i < I; i++){                
                 newMonthComponents.push(["aura:html", {
                         "tag": "div",
                         "HTMLAttributes": {
@@ -233,11 +233,11 @@
         function (components, status, errorMessage) {
              if (status === 'SUCCESS') {
                 component.set("v.contentPicker", []);
-                var pageBody = component.get("v.contentPicker");                 
-                for (var i = 0; i < components.length; i += 2) {
-                    var td = components[i];
-                    var div = components[i + 1];
-                    var tdBody = td.get("v.body");
+                let pageBody = component.get("v.contentPicker");                 
+                for (let i = 0; i < components.length; i += 2) {
+                    let td = components[i];
+                    let div = components[i + 1];
+                    let tdBody = td.get("v.body");
                     tdBody.push(div);
                     td.set("v.body", tdBody)
                     pageBody.push(td);
@@ -246,7 +246,7 @@
             }
             else // Report any error
             {
-                var toastEvent = $A.get("e.force:showToast");
+                let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
                     "title": "Error!",
                     "message": "Failed to create list components."
@@ -258,17 +258,17 @@
     },
     
     createYear : function(component, event, year) {
-        var currentDateCmp = component.get("v.currentDate");
-        var currentDate = new Date(currentDateCmp);
-        var currentYear = currentDate.getFullYear();
+        let currentDateCmp = component.get("v.currentDate");
+        let currentDate = new Date(currentDateCmp);
+        let currentYear = currentDate.getFullYear();
         
-        var years = [];
-        var newYearsComponents = [];
-        for(var y = year; y > year-13; y-- ) {
+        let years = [];
+        let newYearsComponents = [];
+        for(let y = year; y > year-13; y-- ) {
         	years.push(y);    
         }
         years = years.reverse();
-        for(var y = year+1; y <= year + 7; y++ ) {
+        for(let y = year+1; y <= year + 7; y++ ) {
         	years.push(y);    
         }
         //console.log(years);
@@ -312,11 +312,11 @@
         function (components, status, errorMessage) {
              if (status === 'SUCCESS') {
                 component.set("v.contentPicker", []);
-                var pageBody = component.get("v.contentPicker");                 
-                for (var i = 0; i < components.length; i += 2) {
-                    var td = components[i];
-                    var div = components[i + 1];
-                    var tdBody = td.get("v.body");
+                let pageBody = component.get("v.contentPicker");                 
+                for (let i = 0; i < components.length; i += 2) {
+                    let td = components[i];
+                    let div = components[i + 1];
+                    let tdBody = td.get("v.body");
                     tdBody.push(div);
                     td.set("v.body", tdBody)
                     pageBody.push(td);
@@ -325,7 +325,7 @@
             }
             else 
             {
-                var toastEvent = $A.get("e.force:showToast");
+                let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
                     "title": "Error!",
                     "message": "Failed to create list components."
@@ -337,14 +337,14 @@
     },
     
     nextDay : function(component, event) {
-    	var currentDate = component.get("v.currentDateTemp");
-        var d = new Date(currentDate);
-        var month = d.getMonth()+1;
-        var date = new Date(d.getFullYear(), month, d.getDate()); 
+    	let currentDate = component.get("v.currentDateTemp");
+        let d = new Date(currentDate);
+        let month = d.getMonth()+1;
+        let date = new Date(d.getFullYear(), month, d.getDate()); 
         if(date.getMonth() != month) {        
         	 date = new Date(d.getFullYear(), month, 1);
         }       
-        var format = component.get("v.format");
+        let format = component.get("v.format");
         component.set("v.informCurrentDate", $A.localizationService.formatDate(date, "MMMM - YYYY"));
         //component.set("v.informCurrentDate", date.toLocaleString("en-us", {month: "long"}));
         component.set("v.currentDateTemp", $A.localizationService.formatDate(date, format));
@@ -352,14 +352,14 @@
     },
     
     previewDay : function(component, event) {
-    	var currentDate = component.get("v.currentDateTemp");
-        var d = new Date(currentDate);
-        var month = d.getMonth()-1;
-        var date = new Date(d.getFullYear(), month, d.getDate()); 
+    	let currentDate = component.get("v.currentDateTemp");
+        let d = new Date(currentDate);
+        let month = d.getMonth()-1;
+        let date = new Date(d.getFullYear(), month, d.getDate()); 
         if(date.getMonth() != month) {        
         	 date = new Date(d.getFullYear(), month, 1);
         } 
-        var format = component.get("v.format");
+        let format = component.get("v.format");
         component.set("v.informCurrentDate", $A.localizationService.formatDate(date, "MMMM - YYYY"));
         //component.set("v.informCurrentDate", date.toLocaleString("en-us", {month: "long"})); 
 		component.set("v.currentDateTemp", $A.localizationService.formatDate(date, format));        
@@ -367,48 +367,140 @@
     },
     
     nextMonth : function(component, event) {
-    	var currentDate = component.get("v.currentDateTemp");
-        var d = new Date(currentDate);
-        var date = new Date(d.getFullYear()+1, d.getMonth(), d.getDate());         
-        var format = component.get("v.format");
+    	let currentDate = component.get("v.currentDateTemp");
+        let d = new Date(currentDate);
+        let date = new Date(d.getFullYear()+1, d.getMonth(), d.getDate());         
+        let format = component.get("v.format");
         component.set("v.informCurrentDate", date.toLocaleString("en-us", {year: "numeric"}));
         component.set("v.currentDateTemp", $A.localizationService.formatDate(date, format));
         this.createMonth(component, event, date);   
     },
     
     previewMonth : function(component, event) {
-    	var currentDate = component.get("v.currentDateTemp");
-        var d = new Date(currentDate);
-        var date = new Date(d.getFullYear()-1, d.getMonth(), d.getDate());         
-        var format = component.get("v.format");
+    	let currentDate = component.get("v.currentDateTemp");
+        let d = new Date(currentDate);
+        let date = new Date(d.getFullYear()-1, d.getMonth(), d.getDate());         
+        let format = component.get("v.format");
         component.set("v.informCurrentDate", date.toLocaleString("en-us", {year: "numeric"}));
         component.set("v.currentDateTemp", $A.localizationService.formatDate(date, format));
         this.createMonth(component, event, date);      
     },
     
     nextYear : function(component, event) {
-    	var currentDate = component.get("v.currentDateTemp");
-        var d = new Date(currentDate);
-        var year = d.getFullYear()+19;
-        var date = new Date(year, d.getMonth(), d.getDate());  
-        var format = component.get("v.format");
+    	let currentDate = component.get("v.currentDateTemp");
+        let d = new Date(currentDate);
+        let year = d.getFullYear()+19;
+        let date = new Date(year, d.getMonth(), d.getDate());  
+        let format = component.get("v.format");
         component.set("v.currentDateTemp", $A.localizationService.formatDate(date, format));
         this.createYear(component, event, year);   
     },
     
     previewYear : function(component, event) {
-    	var currentDate = component.get("v.currentDateTemp");
-        var d = new Date(currentDate);
-        var year = d.getFullYear()-19;
-        var date = new Date(year, d.getMonth(), d.getDate());  
-        var format = component.get("v.format");
+    	let currentDate = component.get("v.currentDateTemp");
+        let d = new Date(currentDate);
+        let year = d.getFullYear()-19;
+        let date = new Date(year, d.getMonth(), d.getDate());  
+        let format = component.get("v.format");
         component.set("v.currentDateTemp", $A.localizationService.formatDate(date, format));
         this.createYear(component, event, year);   
     },
-   
-    blurtoggleVisibility : function(component, event) {
-        //event.stopPropagation();
-        var cmpTarget = component.find('mainPickerClass');
-        $A.util.addClass(cmpTarget, 'ease');  
+    
+    setDatePicker : function(component, event, date) {
+    	//event.stopPropagation();   
+        //let device = $A.get("$Browser.formFactor");
+        let animation = component.get("v.animation");
+        if(animation) {            
+            function addAnimeEnd(){            
+                //$A.enqueueAction(component.get('c.myAction'));  
+                let cmpEvent = component.getEvent("setDateEvent");
+                cmpEvent.setParams({
+                    "setCurrentDate" : date 
+                }); 
+                //component.find("overlayLib").notifyClose();
+                window.setTimeout(
+                        $A.getCallback(function() {                            
+                            rootContent.removeEventListener("webkitAnimationEnd", addAnimeEnd, false);
+                            rootContent.removeEventListener("oAnimationEnd"     , addAnimeEnd, false);
+                            rootContent.removeEventListener("msAnimationEnd"    , addAnimeEnd, false);
+                            rootContent.removeEventListener("animationend"      , addAnimeEnd, false);
+                            cmpEvent.fire(); 
+                            $A.enqueueAction(component.get('c.closeModalWindow'));
+                }), 1 );
+            }         
+            let rootContent = component.find('root--content').getElement();         
+            rootContent.addEventListener("webkitAnimationEnd", addAnimeEnd, false);
+            rootContent.addEventListener("oAnimationEnd"     , addAnimeEnd, false);
+            rootContent.addEventListener("msAnimationEnd"    , addAnimeEnd, false);
+            rootContent.addEventListener("animationend"      , addAnimeEnd, false);
+            this.selectAnimationReverce(component, event);                          
+        } else {
+                let cmpEvent = component.getEvent("setDateEvent");
+                cmpEvent.setParams({
+                    "setCurrentDate" : date 
+                });                    
+                cmpEvent.fire();
+                $A.enqueueAction(component.get('c.closeModalWindow'));   
+        }    
     },
+    
+    selectAnimation : function (component, event) {
+        let animation = component.get("v.animation");
+            if(animation) {
+                this.deleteContentAnimation(component, event);
+                window.setTimeout(
+                    $A.getCallback(function() {
+                        let rootContent = component.find('root--content');
+                        $A.util.toggleClass(rootContent, 'mydatepicker--content--anime');
+                    }), 1
+                );            
+            } 
+    },
+    
+    selectAnimationReverce : function (component, event) {       
+        let animation = component.get("v.animation");
+            if(animation) {
+                this.deleteContentAnimation(component, event);
+                window.setTimeout(
+                    $A.getCallback(function() {
+                        let rootContent = component.find('root--content');
+                        $A.util.toggleClass(rootContent, 'mydatepicker--content--anime--reverce');
+                    }), 1
+                ); 
+            } 
+    },
+    
+    nextAnimation : function (component, event) {
+        let animation = component.get("v.animation");
+            if(animation) {
+                this.deleteContentAnimation(component, event);               
+                window.setTimeout(
+                    $A.getCallback(function() {
+                        let rootContent = component.find('root--content');
+                        $A.util.toggleClass(rootContent, 'mydatepicker--content--anime--right');
+                    }), 1
+                );            
+            } 
+    },
+    
+    prewAnimation : function (component, event) {
+        let animation = component.get("v.animation");
+            if(animation) {
+                this.deleteContentAnimation(component, event);
+                window.setTimeout(
+                    $A.getCallback(function() {
+                        let rootContent = component.find('root--content');
+                        $A.util.toggleClass(rootContent, 'mydatepicker--content--anime--left');
+                    }), 1
+                );            
+            } 
+    },    
+    
+    deleteContentAnimation : function (component, event) {
+    	let rootContent = component.find('root--content');
+                $A.util.removeClass(rootContent, 'mydatepicker--content--anime');        
+				$A.util.removeClass(rootContent, 'mydatepicker--content--anime--reverce');
+                $A.util.removeClass(rootContent, 'mydatepicker--content--anime--left');        
+				$A.util.removeClass(rootContent, 'mydatepicker--content--anime--right');   
+    },          
 })

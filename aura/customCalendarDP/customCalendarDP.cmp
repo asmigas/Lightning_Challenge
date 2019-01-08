@@ -1,0 +1,45 @@
+<aura:component implements="force:hasRecordId">
+    <aura:attribute name="informCurrentDate" type="String" default="" /> 
+	<aura:attribute name="contentPicker" type="String[]" default="" /> 
+    <aura:attribute name="activeSelectPickerDayMonthYear" type="Integer" access="private" default="0"/>
+    <aura:attribute name="currentDateTemp" type="Date" access="private" /> 
+    <aura:attribute name="headerYear" type="String" access="private" /> 
+    <aura:attribute name="headerDate" type="String" access="private" /> 
+    
+    <aura:attribute name="currentDate" type="String" default="2018-12-14" /> 
+    <aura:attribute name="formatDay" type="String" default="USA"/>
+    <aura:attribute name="color" type="String" default="white"/>
+    <aura:attribute name="bgcolor" type="String" default="rgb(194, 57, 52)"/>
+    <aura:attribute name="format" type="String" default="MMM dd, YYYY"/>
+    <aura:attribute name="header" type="Boolean" default="true"/>
+    <aura:attribute name="animation" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+ 
+    <aura:registerEvent name="setDateEvent" type="c:someEvent"/>  
+    <lightning:overlayLibrary aura:id="overlayLib"/>    
+    
+    <div aura:id="customCalendarDP">
+        <div aura:id="mainPickerClass" class="mydatepicker slds-input" id="customCalendarDP_id"> 
+            <aura:if isTrue="{!v.header == true}">
+                <div aura:id="headerInfoPicker" id="headerInfoPicker_id" style="{! 'color:' + v.color +';\nbackground-color:' + v.bgcolor+';\nfont-size: 100%;'}" class="headerInfoPickerClass slds-grid slds-wrap slds-align_absolute-center">
+                    <div class="slds-size_3-of-3 slds-text-align_left slds-text-heading_medium">{!v.headerYear}</div>
+                    <div class="slds-size_3-of-3 slds-align_absolute-center slds-text-body_regular slds-text-heading_large" style="font-size: 20pt;">{!v.headerDate}</div>
+                </div>
+            </aura:if>     
+            <nav aura:id="root--nav" class="mydatepicker--nav slds-text-heading_small slds-align_absolute-center" style="{! if(v.header==false, 'color:' + v.color +';\nbackground-color:' + v.bgcolor,'color: black') }" >
+                <lightning:buttonIcon class="root--nav--prew" iconName="utility:chevronleft" variant="container" alternativeText="Preview" onclick="{!c.preview}"/>
+                <lightning:button class="root--nav--select" variant="base" title="Select month" onclick="{!c.selectMothYear }" >
+                    {!v.informCurrentDate}<!-- <ui:outputDate  value="{!v.currentDate}" format="MMMM" /> -->
+                </lightning:button>
+                <lightning:buttonIcon class="root--nav--next" iconName="utility:chevronright" variant="container" alternativeText="Next" onclick="{!c.next }" />           
+            </nav>            
+            <div aura:id="root--content" class="mydatepicker--content slds-grid slds-wrap slds-align_absolute-center ">{!v.contentPicker}</div>
+            <aura:if isTrue="{!v.activeSelectPickerDayMonthYear == 0}">
+                <div id="menuDay" class="menuDayClass slds-grid slds-wrap slds-align_absolute-center slds-text-title_caps" onclick="{!c.setToday}" >	
+                    <div style="{! 'border-color:' + v.bgcolor }" class="menuDayItemClass slds-size_1-of-3 slds-align_absolute-center">Today</div>
+                </div>
+            </aura:if>
+        </div>     
+    </div>
+</aura:component>

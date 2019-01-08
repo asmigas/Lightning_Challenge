@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="set Date by event" >
+    <aura:attribute name="setCurrentDate" type="String"/> 
+</aura:event>

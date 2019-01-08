@@ -1,0 +1,45 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global">
+    <!-- <ltng:require styles="{!$Resource.SLDS + '/styles/salesforce-lightning-design-system.css'}"/>  for example -->
+
+    <aura:attribute name="currentDate" type="String" default="2018-12-14" /> 
+    <aura:attribute name="formatDay" type="String" default="USA"/>
+    <aura:attribute name="color" type="String" default="white"/>
+    <aura:attribute name="bgcolor" type="String" default="rgb(194, 57, 52)"/>
+    <aura:attribute name="format" type="String" default="MMM dd, YYYY"/>
+    <aura:attribute name="header" type="Boolean" default="true"/>
+    <aura:attribute name="animation" type="Boolean" default="false"/>
+    <aura:attribute name="label" type="String" default="Hello this is Label!"/>
+    <aura:attribute name="enablePicker" type="Boolean" default="true"/>
+    
+    <aura:attribute name="datePickerCustom" type="Aura.component" default=""/>
+    <lightning:overlayLibrary aura:id="overlayLib"/>    
+    
+    <aura:handler name="setDateEvent" event="c:someEvent" action="{!c.setDatebyEvent}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div aura:id="CalendarComponent"> <!-- tabindex="0" onblur="{!c.blurtoggleVisibility}" -->
+    	<div aura:id="IdMainPicker" class="mainPicker" >
+    		<div aura:id="inputDateCustomDatePicker" class="slds-input-has-icon slds-input-has-icon_right" onclick="{!c.myAction}" >	
+                <label class="slds-form-element__label" for="text-input-id-1">{!v.label}</label>
+               <!-- <lightning:icon aura:id="iconDate" class="iconInput slds-float_right slds-input__icon" 
+                                src="{!$Resource.SLDS + '/icons/utility-sprite/svg/symbols.svg#date_input'}" 
+                                iconName="utility:date_input" alternativeText="datePicker"/>  -->
+                <lightning:icon aura:id="iconDate" class="iconInput slds-icon slds-input__icon slds-input__icon_right" iconName="utility:date_input" alternativeText="datePicker" />     
+                <input aura:id="date-input" class="slds-input" type="text" value="{!v.currentDate}" onclick="{!c.myAction}" /> 
+                <!-- <ui:inputDate aura:id="expdate" label="Custom DatePicker" class="field" value="{!v.currentDate}" displayDatePicker="false" /> -->
+            </div>
+            <div aura:id="enablePicker-content" class="content--dp--PC ease animation--class" >
+            	{!v.datePickerCustom}
+            </div>
+        </div>
+    </div>
+    <aura:html tag="style">        
+        .modal-body {
+            padding: 0 0rem !important;
+        	border-radius: 15px !important;
+        	min-width: 270px !important;
+        	min-height: max-content; 
+        }
+    </aura:html>
+   </aura:component>
