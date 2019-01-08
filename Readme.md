@@ -42,8 +42,8 @@
 
 ###  EnablePicker
 - This attribute enable or disable datePicker.
-`datePicker = "true"`
- - default datePicker = "true"
+`enablePicker = "true"`
+ - default enablePicker = "true"
 
 ## new Version 2.0:
  **What's new?** 
